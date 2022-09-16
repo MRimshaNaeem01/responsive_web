@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Service from "./pages/Service";
 import About from "./pages/About";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes ,Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from './components/Footer';
 const App = () => {
@@ -16,13 +16,18 @@ const App = () => {
     <>
     <Navbar />
      <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route exact path="/about" element={<About />} />
-      <Route exact path="/contact" element={<Contact />} />
-      <Route exact path="/service" element={<Service />} />
+      <Route  path="/" element={<Home />} />
+      <Route  path="/about" element={<About />} />
+      <Route  path="/contact" element={<Contact />} />
+      <Route  path="/service" element={<Service />} />
+
+      <Route path="*" element={<Navigate to ="/" />}/>
+
       {/* <Redirect path="/" element={<Home />} /> */}
     </Routes>
+   
     <Footer />
+    
     </>
    
     // </div>
